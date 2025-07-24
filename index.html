@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Make India Tech Again 🇮🇳</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #fdf6e3;
+      padding: 2rem;
+    }
+
+    header {
+      background-color: #ff5722;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    #alternatives {
+      margin-top: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    
+    <h2>🇮🇳 Indians Will Build Their Own Tech!</h2>
+  </header>
+
+  <section id="alternatives">
+    <h3>💡 Indian Alternatives</h3>
+    <ul>
+      <li>Search: <strong>GyanSearch</strong></li>
+      <li>Email: <strong>DesiMail</strong></li>
+      <li>Cloud: <strong>IndCloud</strong></li>
+    </ul>
+  </section>
+
+  <section>
+    <button id="boycottBtn">Boycott Now!</button>
+    <p id="message"></p>
+    <p>🚀 Supporters: <span id="counter">0</span></p>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Indian Devs</p>
+  </footer>
+
+  <script>
+    let count = 0;
+
+    document.getElementById('boycottBtn').addEventListener('click', () => {
+      count++;
+      document.getElementById('counter').textContent = count;
+      document.getElementById('message').textContent = "🇮🇳 We will build our own Google!";
+      launchConfetti();
+    });
+
+    function launchConfetti() {
+      const colors = ['red', 'green', 'orange', 'blue'];
+      for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'absolute';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.top = Math.random() * window.innerHeight + 'px';
+        confetti.style.width = '10px';
+        confetti.style.height = '10px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.opacity = '0.7';
+        confetti.style.borderRadius = '50%';
+        confetti.style.zIndex = '1000';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 2000);
+      }
+    }
+  </script>
+</body>
+</html>
